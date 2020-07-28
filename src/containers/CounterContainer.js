@@ -5,8 +5,8 @@ import { getRandomColor } from '../utils';
 
 // store 안의 state 값을 props 로 연결해줍니다.
 const mapStateToProps = (state) => ({
-  color: state.color,
-  number: state.number
+  color: state.colorData.color,
+  number: state.numberData.number
 });
 
 
@@ -20,7 +20,6 @@ const mapDispatchToProps = (dispatch) => ({
   onDecrement: () => dispatch(actions.decrement()),
   onSetColor: () => {
     const color = getRandomColor();
-    console.log("color : ", color);
     dispatch(actions.setColor(color));
   }
 });
